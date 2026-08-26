@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    android:background="@color/white"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/exploreImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/dahihandi"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exploreHeading"
+            android:layout_below="@id/exploreImage"
+            android:layout_alignStart="@id/exploreImage"
+            android:text="@string/explore"
+            style="@style/eventHeading"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationIcon"
+            android:src="@drawable/baseline_location_on_24"
+            android:layout_below="@id/exploreHeading"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exploreLocation"
+            android:layout_alignTop="@id/locationIcon"
+            android:layout_toEndOf="@id/locationIcon"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="@string/explore"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exploreDescription"
+            android:layout_below="@id/locationIcon"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:text="@string/explore"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

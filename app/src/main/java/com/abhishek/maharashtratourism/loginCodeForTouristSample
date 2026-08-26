@@ -1,0 +1,159 @@
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.concurrent.TimeUnit;
+
+public class TouristLoginActivity extends AppCompatActivity {
+
+    private EditText numberEditText, passwordEditText;
+    private Button loginButton;
+    private TextView signupTextView;
+    private FirebaseAuth mAuth; // Firebase Authentication instance
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tourist_login);
+        getSupportActionBar().hide();
+
+        mAuth = FirebaseAuth.getInstance(); // Initialize Firebase Auth
+        numberEditText = findViewById(R.id.numberEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
+        loginButton = findViewById(R.id.loginButton);
+        signupTextView = findViewById(R.id.signupTextView);
+
+        loginButton.setOnClickListener(v -> loginUser());
+
+        signupTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(TouristLoginActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void loginUser() {
+        String input = numberEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+
+        // Validate inputs
+        if (TextUtils.isEmpty(input) || TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Please enter both email/phone and password.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Check if the input is a phone number or email
+        if (isValidPhoneNumber(input)) {
+            // If it's a phone number, trigger Firebase phone authentication
+            phoneLogin(input, password);
+        } else if (isValidEmail(input)) {
+            // If it's an email, use Firebase Authentication with email/password
+            emailLogin(input, password);
+        } else {
+            Toast.makeText(this, "Please enter a valid email or phone number.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean isValidPhoneNumber(String phone) {
+        return phone != null && phone.length() == 10 && TextUtils.isDigitsOnly(phone);
+    }
+
+    private boolean isValidEmail(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void phoneLogin(String phoneNumber, String password) {
+        // For phone authentication, you first need to trigger Firebase's phone authentication process
+
+        // Using phone number authentication, send a verification code
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phoneNumber,       // Phone number to verify
+                60,                // Timeout duration
+                TimeUnit.SECONDS,  // Unit of timeout
+                this,              // Activity (for callback binding)
+                new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                    @Override
+                    public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+                        // Automatically sign in the user with the phone credential
+                        mAuth.signInWithCredential(phoneAuthCredential)
+                                .addOnCompleteListener(TouristLoginActivity.this, task -> {
+                                    if (task.isSuccessful()) {
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        if (user != null) {
+                                            Toast.makeText(TouristLoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+                                            // Save the user ID (UID) to SharedPreferences
+                                            SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                                            editor.putString("userId", user.getUid());
+                                            editor.putBoolean("isLoggedIn", true);
+                                            editor.apply();
+
+                                            // Navigate to the MainActivity
+                                            Intent intent = new Intent(TouristLoginActivity.this, MainActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    } else {
+                                        Toast.makeText(TouristLoginActivity.this, "Failed to authenticate user with phone number.", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onVerificationFailed(com.google.firebase.FirebaseException e) {
+                        Toast.makeText(TouristLoginActivity.this, "Phone verification failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                        // Once the code is sent, you can prompt the user to enter the verification code
+                        Toast.makeText(TouristLoginActivity.this, "Verification code sent to phone.", Toast.LENGTH_SHORT).show();
+
+                        // Navigate to a screen where user can input verification code
+                        Intent intent = new Intent(TouristLoginActivity.this, PhoneVerificationActivity.class);
+                        intent.putExtra("verificationId", verificationId);
+                        startActivity(intent);
+                    }
+                });
+    }
+
+    private void emailLogin(String email, String password) {
+        // Firebase Authentication login using email/password
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            Toast.makeText(TouristLoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+                            // Save the user ID (UID) to SharedPreferences
+                            SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("userId", user.getUid());
+                            editor.putBoolean("isLoggedIn", true);
+                            editor.apply();
+
+                            // Navigate to the MainActivity
+                            Intent intent = new Intent(TouristLoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    } else {
+                        Toast.makeText(TouristLoginActivity.this, "Invalid credentials!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+}
+

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_maharashtra"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/signupTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#808080"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:layout_margin="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="Already have an account?"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/loginTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#808080"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:layout_below="@id/signupTextView"
+            android:layout_alignEnd="@id/signupTextView"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/welcomeTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginTextView"
+            android:shadowColor="#808080"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:layout_marginTop="90dp"
+            android:text="Welcome to"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/welcomeTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcomeTextView1"
+            android:layout_alignStart="@id/welcomeTextView1"
+            android:shadowColor="#808080"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="Maharashtra Tourism"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:hint="Enter Name"
+            android:layout_below="@id/welcomeTextView2"
+            android:inputType="text"
+            style="@style/inputField"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/name"
+            android:layout_alignTop="@id/nameEditText"
+            android:layout_alignBottom="@id/nameEditText"
+            android:alpha="1"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:hint="Enter email"
+            android:layout_below="@id/nameEditText"
+            android:inputType="textEmailAddress"
+            style="@style/inputField"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_email_24"
+            android:layout_alignTop="@id/emailEditText"
+            android:layout_alignBottom="@id/emailEditText"
+            android:alpha="1"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:hint="Phone Number"
+            android:layout_below="@id/emailEditText"
+            android:inputType="number"
+            style="@style/inputField"/>
+
+        <Button
+            android:id="@+id/sendPhoneOtpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send OTP"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/phoneEditText"/>
+
+        <EditText
+            android:id="@+id/otpPhoneEditText"
+            android:hint="Enter Phone OTP"
+            android:inputType="number"
+            style="@style/inputField"
+            android:visibility="gone"
+            android:layout_below="@id/sendPhoneOtpButton"/>
+
+        <Button
+            android:id="@+id/verifyPhoneOtpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify OTP"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:visibility="gone"
+            android:layout_below="@id/otpPhoneEditText"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/number"
+            android:layout_alignTop="@id/phoneEditText"
+            android:layout_alignBottom="@id/phoneEditText"
+            android:alpha="1"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:hint="Password"
+            android:layout_below="@id/verifyPhoneOtpButton"
+            android:inputType="textPassword"
+            style="@style/inputField"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_lock_24"
+            android:layout_alignTop="@id/passwordEditText"
+            android:layout_alignBottom="@id/passwordEditText"
+            android:alpha="1"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/confirmPasswordEditText"
+            android:hint="Confirm Password"
+            android:layout_below="@id/passwordEditText"
+            android:inputType="textPassword"
+            style="@style/inputField"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_lock_24"
+            android:layout_alignTop="@id/confirmPasswordEditText"
+            android:layout_alignBottom="@id/confirmPasswordEditText"
+            android:alpha="1"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageViewProfile"
+            android:src="@drawable/baseline_person_24"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/circle_background"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/confirmPasswordEditText"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSelectImage"
+            android:text="Choose Profile"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/orange"
+            android:layout_toRightOf="@id/imageViewProfile"
+            android:layout_below="@id/confirmPasswordEditText"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/imageViewProfile"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="12dp"
+            android:text="Sign UP"
+            android:enabled="false"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+</ScrollView>

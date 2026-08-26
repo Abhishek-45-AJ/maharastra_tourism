@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="10dp"
+    tools:context=".GuideEditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit Your Profile"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/orange"
+            android:textAllCaps="true"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/updatedGuideName"
+            android:inputType="text"
+            android:autofillHints="guideName"
+            android:hint="Name"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/updatedGuidePhone"
+            android:inputType="number"
+            android:autofillHints="guidePhone"
+            android:hint="Phone number"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/updatedGuideEmail"
+            android:inputType="textEmailAddress"
+            android:autofillHints="guideEmail"
+            android:hint="Email"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/updatedGuideFees"
+            android:inputType="text"
+            android:autofillHints="guideFees"
+            android:hint="Fees"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/updatedGuideCity"
+            android:inputType="text"
+            android:autofillHints="guideCity"
+            android:hint="City"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/updatedGuideLanguages"
+            android:inputType="text"
+            android:autofillHints="guideLanguages"
+            android:hint="Languages"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/updatedGuideSpecialization"
+            android:inputType="text"
+            android:autofillHints="guideSpecialization"
+            android:hint="Specialization"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/updatedGuideExperience"
+            android:inputType="number"
+            android:autofillHints="guideExperience"
+            android:hint="Experience"
+            style="@style/inputField"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/guideImage"
+                android:src="@drawable/baseline_image_24"
+                android:contentDescription="Update profile image"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/selectImageBtn"
+                android:text="Select Image"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/orange"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateGuideBtn"
+            android:backgroundTint="@color/orange"
+            android:text="Save Profile"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

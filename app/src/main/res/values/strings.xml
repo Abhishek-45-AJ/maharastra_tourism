@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Maharashtra Tourism</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="suggested_destination">Places Near You</string>
+    <string name="viewMore">view more</string>
+    <string name="popularFestival">Upcoming Festivals</string>
+    <string name="explore">Explore More</string>
+    <string name="event">Event heading</string>
+    <string name="placeImage">PLace Image</string>
+    <string name="iconImage">Icon Image</string>
+    <string name="logoImage">Logo Image</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <string-array name="language_array">
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Marathi</item>
+    </string-array>
+
+    <string-array name="specialization_array">
+        <item>Heritage Tours</item>
+        <item>Cultural Tours</item>
+        <item>Adventure Tours</item>
+        <item>Wildlife Tours</item>
+    </string-array>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#F57C00</color>
+    <color name="transperent">#00000000</color>
+    <color name="darker_gray">#F7C7C7C7</color>
+    <color name="light_gray">#F2E9DBDB</color>
+    <color name="link_blue">#03A9F4</color>
+    <color name="green">#25E02C</color>
+
+
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#FF6F00</color> <!-- Orange shade -->
+    <color name="colorPrimaryDark">#E65100</color> <!-- Darker orange shade -->
+    <color name="colorAccent">#FFAB40</color> <!-- Accent orange shade -->
+
+    <!-- Text Colors -->
+    <color name="textColorPrimary">#FFFFFF</color> <!-- White for text -->
+    <color name="hintColor">#CCCCCC</color> <!-- Light gray for hints -->
+    <color name="hintColor1">#B0BEC5</color> <!-- Hint color for input fields -->
+    <color name="holo_red_dark">#FFCC0000</color> <!-- Red for error text -->
+
+    <!-- Background and Icon Colors -->
+    <color name="backgroundColor">#F5F5F5</color> <!-- Light gray for background -->
+    <color name="iconColor">#FF6F00</color> <!-- Orange for icons -->
+
+    <!-- Additional Colors -->
+    <color name="errorColor">#FF5252</color> <!-- Red for errors -->
+    <color name="shadowColor">#808080</color> <!-- Medium gray for shadow effects -->
+
+
+</resources>

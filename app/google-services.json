@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1047344561970",
+    "firebase_url": "https://maharashtra-tourism-21fdb-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "maharashtra-tourism-21fdb",
+    "storage_bucket": "maharashtra-tourism-21fdb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047344561970:android:de3dbd615184ee5e0c212b",
+        "android_client_info": {
+          "package_name": "com.abhishek.maharashtratourism"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0aRkRhKqqedMvMSyY9IRTt4ifZgpRpVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

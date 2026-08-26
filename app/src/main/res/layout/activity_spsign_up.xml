@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_maharashtra"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/signupTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:shadowColor="#808080"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:text="Already have an account?"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/signupText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#808080"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:layout_below="@id/signupTextView"
+            android:layout_alignEnd="@id/signupTextView"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/welcomeTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signupText"
+            android:shadowColor="#808080"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:layout_marginTop="80dp"
+            android:text="Welcome to"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/welcomeTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcomeTextView1"
+            android:layout_alignStart="@id/welcomeTextView1"
+            android:shadowColor="#808080"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="Maharashtra Tourism"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:hint="Enter Name"
+            android:layout_below="@id/welcomeTextView2"
+            android:inputType="text"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:hint="Enter email"
+            android:layout_below="@id/nameEditText"
+            android:inputType="textEmailAddress"
+            style="@style/inputField" />
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:hint="Phone Number"
+            android:layout_below="@id/emailEditText"
+            android:inputType="number"
+            style="@style/inputField" />
+
+        <Button
+            android:id="@+id/sendPhoneOtpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send OTP"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/phoneEditText"/>
+
+        <EditText
+            android:id="@+id/otpPhoneEditText"
+            android:hint="Enter Phone OTP"
+            android:inputType="number"
+            android:visibility="gone"
+            style="@style/inputField"
+            android:layout_below="@id/sendPhoneOtpButton"/>
+
+        <Button
+            android:id="@+id/verifyPhoneOtpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify OTP"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/otpPhoneEditText"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/cityEditText"
+            android:inputType="text"
+            android:autofillHints="City Coverd"
+            android:hint="City"
+            style="@style/inputField"
+            android:layout_below="@id/verifyPhoneOtpButton"/>
+
+        <EditText
+            android:id="@+id/spinnerLanguages"
+            android:inputType="text"
+            android:hint="Languages known"
+            style="@style/inputField"
+            android:layout_below="@id/cityEditText" />
+
+        <EditText
+            android:id="@+id/spinnerSpecialization"
+            android:inputType="text"
+            android:hint="Specialization"
+            style="@style/inputField"
+            android:layout_below="@id/spinnerLanguages"/>
+
+        <EditText
+            android:id="@+id/experienceEditText"
+            android:hint="Experience (in years)"
+            android:inputType="number"
+            android:layout_below="@id/spinnerSpecialization"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/feesEditText"
+            android:hint="Fees per day/hour"
+            android:inputType="text"
+            android:layout_below="@id/experienceEditText"
+            style="@style/inputField"/>
+
+        <EditText
+            android:id="@+id/passwordEdittext"
+            android:hint="Password"
+            android:layout_below="@id/feesEditText"
+            android:inputType="textPassword"
+            style="@style/inputField" />
+
+        <EditText
+            android:id="@+id/confirmPasswordEditText"
+            android:hint="Confirm Password"
+            android:layout_below="@id/passwordEdittext"
+            android:inputType="textPassword"
+            style="@style/inputField" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/docHolder"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_layout"
+            android:layout_below="@id/confirmPasswordEditText">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Verification Documents"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* Upload Aadhaar Card"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/black"/>
+
+            <Button
+                android:id="@+id/buttonUploadAadhar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload Aadhaar Card"
+                android:backgroundTint="@color/orange"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* Upload Tourist certificate if not available upload PAN card"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/black"/>
+
+            <Button
+                android:id="@+id/buttonUploadOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload Other Document"
+                android:backgroundTint="@color/orange"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"/>
+
+            <Button
+                android:id="@+id/buttonSaveDoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:enabled="false"
+                android:backgroundTint="@color/orange"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:id="@+id/imageHolder"
+            android:layout_below="@id/docHolder">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/serviceProviderImage"
+                android:src="@drawable/baseline_image_24"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/selectImageBtn"
+                android:text="Select image"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/orange"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/instruction"
+            android:text="*Please verify number,and select all documents to enable sign up button"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:textStyle="italic"
+            android:textColor="@color/darker_gray"
+            android:layout_below="@id/imageHolder"/>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/instruction"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="12dp"
+            android:text="Sign UP"
+            android:enabled="false"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spSignUpProgressBar"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
