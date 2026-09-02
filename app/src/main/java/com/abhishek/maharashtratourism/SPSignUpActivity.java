@@ -53,7 +53,6 @@ public class SPSignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spsign_up);
-        getSupportActionBar().hide();
 
         TextView signupText=findViewById(R.id.signupText);
         signupText.setOnClickListener(v -> startActivity(new Intent(SPSignUpActivity.this,ServiceProviderLoginActivity.class)));

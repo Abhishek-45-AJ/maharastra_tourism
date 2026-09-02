@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
     tools:context=".PlaceDetailActivity">
 
     <LinearLayout
@@ -51,8 +52,6 @@
 
 
         </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,10 +154,73 @@
             android:textColor="@color/black"
             android:text="description"/>
 
+        <!-- STAYS & HOTELS SECTION -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Stays &amp; Hotels"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/btnSeeAllHotels"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="See All &gt;"
+                android:backgroundTint="@color/orange"
+                android:textColor="@color/white"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHotelsHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+        <!-- REVIEWS SECTION -->
+        <Button
+            android:id="@+id/btnAddReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Write a Review"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewReviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:id="@+id/mapContainer"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Add this Get Directions Button -->
+        <Button
+            android:id="@+id/btnGetDirections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Directions"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/orange"
+            android:textStyle="bold"
+            android:textSize="16sp"
             android:layout_marginTop="10dp"/>
 
         <TextView

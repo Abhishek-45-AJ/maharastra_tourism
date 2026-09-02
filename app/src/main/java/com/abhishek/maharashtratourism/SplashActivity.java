@@ -5,11 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -17,7 +13,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -27,6 +23,7 @@ public class SplashActivity extends AppCompatActivity {
                 String userId=sharedPreferences.getString("userId",null);
                 int user=sharedPreferences.getInt("user",1) ;
                 Intent intent;
+
                 if(isLoggedIn){
                     if(user==1){
                         intent = new Intent(SplashActivity.this, MainActivity.class);

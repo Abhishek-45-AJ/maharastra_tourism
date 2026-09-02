@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences=getSharedPreferences("MyAppPrefs",MODE_PRIVATE);
         String userId=sharedPreferences.getString("userId",null);
 
+        // Initialize and set the custom toolbar as the ActionBar
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         bottom_nav= findViewById(R.id.bottom_nav);
 
         if(savedInstanceState==null){

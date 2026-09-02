@@ -23,6 +23,12 @@
         android:theme="@style/Theme.MaharashtraTourism"
         tools:targetApi="31">
         <activity
+            android:name=".AllHotelsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NavigationActivity"
+            android:exported="false" />
+        <activity
             android:name=".GuideNotificationActivity"
             android:exported="false" />
         <activity

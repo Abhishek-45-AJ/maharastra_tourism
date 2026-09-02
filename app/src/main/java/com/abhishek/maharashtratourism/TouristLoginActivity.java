@@ -33,7 +33,6 @@ public class TouristLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tourist_login);
-        getSupportActionBar().hide();
 
         userRef= FirebaseDatabase.getInstance().getReference("users");
 

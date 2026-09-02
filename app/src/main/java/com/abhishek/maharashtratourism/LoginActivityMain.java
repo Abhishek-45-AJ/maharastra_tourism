@@ -18,7 +18,6 @@ public class LoginActivityMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_main);
-        getSupportActionBar().hide();
 
         touristLoginButton=findViewById(R.id.touristLoginButton);
         serviceProviderLoginButton=findViewById(R.id.serviceProviderLoginButton);
